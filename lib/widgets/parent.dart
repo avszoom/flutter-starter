@@ -16,9 +16,11 @@ class Parent extends StatelessWidget {
         fontFamily: 'Roboto',
       ),
       home: Container(
-          margin: MediaQuery.of(context).size.width > 600 
-          ? const EdgeInsetsDirectional.only(top: 100,start: 200,end: 200)
-          : const EdgeInsetsDirectional.all(0.0),
+          margin: 
+          MediaQuery.of(context).size.width > 600 
+          ? const EdgeInsetsDirectional.only(top: 100,start: 400,end: 200)
+          : 
+          const EdgeInsetsDirectional.all(0.0),
           child: Center(child: child),
       ),
     );

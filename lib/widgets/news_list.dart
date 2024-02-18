@@ -32,22 +32,28 @@ class _NewsListState extends State<NewsList> {
   @override
   Widget build(BuildContext context) {
     return _isLoading? const Center(child: CircularProgressIndicator()) :Scaffold(
-      body: Column(
+      body: Stack(
         children: [
-          Container(
-            margin: const EdgeInsets.only(left:5),
-            child: const Text('Samachar', style: TextStyle(
-                fontWeight: FontWeight.bold, // To make the text bold
-                fontSize: 30, // To increase the font size
-            ),),
-                    ),
           Expanded(child: SingleChildScrollView(
-            physics: const AlwaysScrollableScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: _articleWidget,
           ),)
           ),
+          Positioned(
+            top: 15,
+            left: 15,
+            child: Container(
+            margin: const EdgeInsets.only(left:5),
+            child: const Text('Samachar', style: TextStyle(
+                fontWeight: FontWeight.bold, // To make the text bold
+                fontSize: 30, // To increase the font size
+                color: Color.fromRGBO(255,255,255,1)
+            ),),
+          
+          )
+                    ),
         ],
       )
     );
