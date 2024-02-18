@@ -21,7 +21,7 @@ class Parent extends StatelessWidget {
           ? const EdgeInsetsDirectional.only(top: 100,start: 400,end: 200)
           : 
           const EdgeInsetsDirectional.all(0.0),
-          child: Center(child: child),
+          child: SizedBox(child: child),
       ),
     );
   }
