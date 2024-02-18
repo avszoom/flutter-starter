@@ -9,13 +9,16 @@ class Parent extends StatelessWidget {
     return 
     MaterialApp(
       title: 'News App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
         fontFamily: 'Roboto',
       ),
       home: Container(
-          margin: const EdgeInsetsDirectional.only(top: 100,start: 200,end: 200),
+          margin: MediaQuery.of(context).size.width > 600 
+          ? const EdgeInsetsDirectional.only(top: 100,start: 200,end: 200)
+          : const EdgeInsetsDirectional.all(0.0),
           child: Center(child: child),
       ),
     );
