@@ -34,13 +34,12 @@ class _NewsListState extends State<NewsList> {
     return _isLoading? const Center(child: CircularProgressIndicator()) :Scaffold(
       body: Stack(
         children: [
-          Expanded(child: SingleChildScrollView(
+          SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: _articleWidget,
-          ),)
-          ),
+          ),),
           Positioned(
             top: 15,
             left: 15,
@@ -51,9 +50,7 @@ class _NewsListState extends State<NewsList> {
                 fontSize: 30, // To increase the font size
                 color: Color.fromRGBO(255,255,255,1)
             ),),
-          
-          )
-                    ),
+          )),
         ],
       )
     );

@@ -13,16 +13,12 @@ class NewsArticle extends StatelessWidget {
             // margin: const EdgeInsets.only(top:40,left:200,right:200),
             color: const Color.fromRGBO(0, 0, 0, 0.8),
             child:
-            Stack(
+            Column(
               children: [
-                NewsArticleImage(imageUrl: article.mediaUrl,height: MediaQuery.of(context).size.height ,width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,), 
-                Positioned(
-                  top: MediaQuery.of(context).size.height*0.75,
-                  left: 0,
-                  right: 10,
-                  child: Column(children: [
+                NewsArticleImage(imageUrl: article.mediaUrl,height: MediaQuery.of(context).size.height*0.7 ,width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,), 
+                Column(children: [
                     Container(
-                    margin: const EdgeInsets.only(left: 10),
+                    margin: const EdgeInsets.only(left: 10,top:10),
                     child: Text(article.title.replaceAll("'", ""),
                       style:const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(255, 255, 255, 1),fontSize: 20),
                       softWrap: true,
@@ -30,7 +26,6 @@ class NewsArticle extends StatelessWidget {
                       maxLines: 3,)),
                     NewsArticleDesc(desc: article.shortDesc,height: MediaQuery.of(context).size.height*0.3,width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,)
                 ],) 
-                ) 
                  ],
             )
           );
