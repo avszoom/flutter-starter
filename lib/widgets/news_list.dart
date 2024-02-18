@@ -31,27 +31,14 @@ class _NewsListState extends State<NewsList> {
 
   @override
   Widget build(BuildContext context) {
+    PageController controller = PageController(initialPage: 0);
     return _isLoading? const Center(child: CircularProgressIndicator()) :Scaffold(
-      body: Stack(
-        children: [
-          SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: _articleWidget,
-          ),),
-          Positioned(
-            top: 15,
-            left: 15,
-            child: Container(
-            margin: const EdgeInsets.only(left:5),
-            child: const Text('Samachar', style: TextStyle(
-                fontWeight: FontWeight.bold, // To make the text bold
-                fontSize: 30, // To increase the font size
-                color: Color.fromRGBO(255,255,255,1)
-            ),),
-          )),
-        ],
+      body: Container(
+        child: PageView(
+          scrollDirection: Axis.vertical,
+          controller: controller,
+          children: _articleWidget,
+        ) 
       )
     );
   }

@@ -13,7 +13,7 @@ class NewsArticleImage extends StatelessWidget {
         child: SizedBox(
           width: width,
           height: height,
-          child: Image.network(imageUrl,fit: BoxFit.cover,width: 300, height: 300,),
+          child: Image.network(imageUrl,fit: BoxFit.cover),
         )
       )
       ;
