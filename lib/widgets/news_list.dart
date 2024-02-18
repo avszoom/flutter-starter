@@ -16,7 +16,7 @@ class _NewsListState extends State<NewsList> {
 
   Future<void> _fetchDataAndPopulateList() async {
     var articles = await NewsArticeApi().fetchNews();
-    var articleWidget = articles.sublist(0,10).map((article) => NewsArticle(article: article)).toList();
+    var articleWidget = articles.map((article) => NewsArticle(article: article)).toList();
     setState(() {
       _articleWidget = articleWidget;
       _isLoading = false;
