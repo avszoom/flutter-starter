@@ -34,13 +34,16 @@ class _NewsListState extends State<NewsList> {
     return _isLoading? const Center(child: CircularProgressIndicator()) :Scaffold(
       body: Column(
         children: [
-          const Center(
-            child: Text('Trending News', style: TextStyle(
+          Container(
+            margin: const EdgeInsets.only(left:5),
+            child: const Text('Samachar', style: TextStyle(
                 fontWeight: FontWeight.bold, // To make the text bold
                 fontSize: 30, // To increase the font size
             ),),
                     ),
-          Expanded(child: SingleChildScrollView(child: Column(
+          Expanded(child: SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: _articleWidget,
           ),)

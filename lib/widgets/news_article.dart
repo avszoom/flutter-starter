@@ -11,13 +11,17 @@ class NewsArticle extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Card(
             // margin: const EdgeInsets.only(top:40,left:200,right:200),
+            color: const Color.fromRGBO(0, 0, 0, 0.8),
             child: MediaQuery.of(context).size.width > 600 ? Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(
                   margin: const EdgeInsets.only(top:20.0),
-                  child: Text(article.title,style:const TextStyle(fontWeight: FontWeight.bold,fontSize: 20),softWrap: true,
-        overflow: TextOverflow.ellipsis,),
+                  child: Text(article.title,
+                    style:const TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Color.fromRGBO(255, 255, 255, 1)),
+                    softWrap: true,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 3),
                 ),
                 Row(
                   children: [
@@ -32,8 +36,13 @@ class NewsArticle extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 NewsArticleImage(imageUrl: article.mediaUrl,height: 200,width: 350,),  
-                Text(article.title.replaceAll("'", ""),style:const TextStyle(fontWeight: FontWeight.bold),softWrap: true,
-        overflow: TextOverflow.ellipsis,),
+                Container(
+                  margin: const EdgeInsets.only(left: 10),
+                  child: Text(article.title.replaceAll("'", ""),
+                    style:const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(255, 255, 255, 1)),
+                    softWrap: true,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 3,)),
                 NewsArticleDesc(desc: article.shortDesc,height: 100,width: 350,)
                  ],
             )

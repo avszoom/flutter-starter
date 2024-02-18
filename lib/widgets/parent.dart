@@ -11,7 +11,7 @@ class Parent extends StatelessWidget {
       title: 'News App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
         fontFamily: 'Roboto',
       ),
