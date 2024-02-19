@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:starter/model/NewsArticleModel.dart';
-import 'package:starter/widgets/news_article_desc.dart';
-import 'package:starter/widgets/news_article_image.dart';
+import 'package:samachar/model/NewsArticleModel.dart';
+import 'package:samachar/widgets/news_article_desc.dart';
+import 'package:samachar/widgets/news_article_image.dart';
 
 class NewsArticle extends StatelessWidget {
   final NewsArticleModel article;

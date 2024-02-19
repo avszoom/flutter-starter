@@ -8,7 +8,7 @@ class Parent extends StatelessWidget {
   Widget build(BuildContext context) {
     return 
     MaterialApp(
-      title: 'News App',
+      title: 'Samachar',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),

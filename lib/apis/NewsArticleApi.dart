@@ -1,7 +1,7 @@
 
 import 'dart:convert';
 
-import 'package:starter/model/NewsArticleModel.dart';
+import 'package:samachar/model/NewsArticleModel.dart';
 import 'package:http/http.dart' as http;
 
 class NewsArticeApi {

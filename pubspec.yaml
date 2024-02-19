@@ -1,5 +1,5 @@
-name: starter
-description: "A new Flutter project."
+name: samachar
+description: "One stop app for all news."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev

@@ -1,9 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:starter/apis/NewsArticleApi.dart';
-import 'package:starter/utils/Util.dart';
-import 'package:starter/widgets/news_article.dart';
+import 'package:samachar/apis/NewsArticleApi.dart';
+import 'package:samachar/utils/Util.dart';
+import 'package:samachar/widgets/news_article.dart';
 
 class NewsList extends StatefulWidget {
   const NewsList({ Key? key }) : super(key: key);
@@ -37,7 +37,8 @@ class _NewsListState extends State<NewsList> {
   @override
   Widget build(BuildContext context) {
     PageController controller = PageController(initialPage: 0);
-    return _isLoading? const Stack(
+    return _isLoading? const Scaffold(
+      body: Stack(
           alignment: Alignment.center,
           children: <Widget>[
             CircularProgressIndicator(),
@@ -49,7 +50,8 @@ class _NewsListState extends State<NewsList> {
               ),
             ),
           ],
-    ) :Scaffold(
+    ) 
+    ):Scaffold(
       body: Container(
         margin: const EdgeInsets.all(0),
         child: PageView(

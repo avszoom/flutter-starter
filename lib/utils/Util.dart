@@ -1,4 +1,4 @@
-import 'package:starter/model/NewsArticleModel.dart';
+import 'package:samachar/model/NewsArticleModel.dart';
 
 List<NewsArticleModel> filterConsecutiveRepeatedArticles(List<NewsArticleModel> articles) {
   if(articles.length <= 1){
