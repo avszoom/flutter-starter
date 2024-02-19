@@ -11,16 +11,17 @@ class NewsReadMore extends StatelessWidget {
     return 
       Container(
         margin: const EdgeInsets.only(top:5,left:0),
-        child: ElevatedButton(
-        onPressed: () {
-          Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => WebViewPage(url: newsUrl,title: title,)),
-                );
-        },
-        child: const Text('Read More'),
-      )
-      );
+        child: SizedBox(
+          child: TextButton(
+          onPressed: () {
+            Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WebViewPage(url: newsUrl,title: title,)),
+                  );
+          },
+          child: const Text('More',style: TextStyle(fontSize: 12,color: Color.fromRGBO(255, 0, 0, 1)),),
+        )
+      ));
   }
 }
 

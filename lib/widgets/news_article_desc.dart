@@ -11,7 +11,7 @@ class NewsArticleDesc extends StatelessWidget {
     return Container(
         padding: const EdgeInsets.only(top:10.0,left: 10,right:20),
         child: SizedBox(
-        child: Text('$desc...',
+        child: Text(desc,
         style: const TextStyle(color: Color.fromRGBO(255, 255, 255, 1),fontSize: 15),
         softWrap: true,
         overflow: TextOverflow.ellipsis,
