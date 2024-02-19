@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:starter/apis/NewsArticleApi.dart';
 import 'package:starter/utils/Util.dart';
@@ -18,6 +20,7 @@ class _NewsListState extends State<NewsList> {
   Future<void> _fetchDataAndPopulateList() async {
     var articles = await NewsArticeApi().fetchNews();
     var filteredArticles = filterConsecutiveRepeatedArticles(articles);
+    filteredArticles.shuffle(Random());
     var articleWidget = filteredArticles.map((article) => NewsArticle(article: article)).toList();
     setState(() {
       _articleWidget = articleWidget;
