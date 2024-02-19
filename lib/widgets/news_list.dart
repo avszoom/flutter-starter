@@ -38,7 +38,7 @@ class _NewsListState extends State<NewsList> {
   Widget build(BuildContext context) {
     PageController controller = PageController(initialPage: 0);
     return _isLoading? const Scaffold(
-      body: Stack(
+      body: Center(child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
             CircularProgressIndicator(),
@@ -50,7 +50,7 @@ class _NewsListState extends State<NewsList> {
               ),
             ),
           ],
-    ) 
+    ) )
     ):Scaffold(
       body: Container(
         margin: const EdgeInsets.all(0),

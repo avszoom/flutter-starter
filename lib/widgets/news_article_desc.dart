@@ -9,7 +9,7 @@ class NewsArticleDesc extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: MediaQuery.of(context).size.width > 600 ? const EdgeInsets.only(top:20.0, left: 20.0,) : const EdgeInsets.only(top:15.0,left: 10,right:20, bottom:10),
+        padding: const EdgeInsets.only(top:10.0,left: 10,right:20),
         child: SizedBox(
         child: Text('$desc...',
         style: const TextStyle(color: Color.fromRGBO(255, 255, 255, 1),fontSize: 15),
