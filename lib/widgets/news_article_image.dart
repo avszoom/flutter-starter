@@ -9,7 +9,7 @@ class NewsArticleImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(0.0),
         child: SizedBox(
           width: width,
           height: height,

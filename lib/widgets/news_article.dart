@@ -10,8 +10,8 @@ class NewsArticle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  
-      Stack(
-        children: [
+      Scaffold(
+        body: 
            Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,
@@ -22,7 +22,7 @@ class NewsArticle extends StatelessWidget {
                 NewsArticleImage(imageUrl: article.mediaUrl,height: MediaQuery.of(context).size.height*0.60 ,width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,), 
                 Container(
                   margin: const EdgeInsets.only(left: 10,top:10),
-                  height: MediaQuery.of(context).size.height*0.1,
+                  height: MediaQuery.of(context).size.height*0.09,
                   child: 
                     SizedBox(
                       height: MediaQuery.of(context).size.height*0.1 ,
@@ -30,23 +30,11 @@ class NewsArticle extends StatelessWidget {
                       style:const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(255, 255, 255, 1),fontSize: 17),
                       softWrap: true,
                       overflow: TextOverflow.ellipsis,
-                      maxLines: 3,))
+                      maxLines: 4,))
                   ),
                   NewsArticleDesc(desc: article.shortDesc,height: MediaQuery.of(context).size.height*0.2,width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,)
                 ],) 
           ),
-          Positioned(
-            top: 15,
-            left: 15,
-            child: Container(
-            margin: const EdgeInsets.only(left:5),
-            child: const Text('Samachar', style: TextStyle(
-                fontWeight: FontWeight.bold, // To make the text bold
-                fontSize: 30, // To increase the font size
-                color: Color.fromRGBO(255,255,255,1)
-            ),),
-          )),
-        ],
       );
    
   }
