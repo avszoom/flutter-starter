@@ -11,8 +11,6 @@ class NewsArticleDesc extends StatelessWidget {
     return Container(
         padding: MediaQuery.of(context).size.width > 600 ? const EdgeInsets.only(top:20.0, left: 20.0,) : const EdgeInsets.only(top:15.0,left: 10,right:20, bottom:10),
         child: SizedBox(
-        width: width,
-        height: height,
         child: Text('$desc...',
         style: const TextStyle(color: Color.fromRGBO(255, 255, 255, 1),fontSize: 15),
         softWrap: true,

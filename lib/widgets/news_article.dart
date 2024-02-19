@@ -22,7 +22,6 @@ class NewsArticle extends StatelessWidget {
                 NewsArticleImage(imageUrl: article.mediaUrl,height: MediaQuery.of(context).size.height*0.60 ,width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,), 
                 Container(
                   margin: const EdgeInsets.only(left: 10,top:10),
-                  height: MediaQuery.of(context).size.height*0.09,
                   child: 
                     SizedBox(
                       height: MediaQuery.of(context).size.height*0.1 ,
