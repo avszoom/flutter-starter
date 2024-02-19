@@ -24,9 +24,8 @@ class NewsArticle extends StatelessWidget {
                   margin: const EdgeInsets.only(left: 10,top:10),
                   child: 
                     SizedBox(
-                      height: MediaQuery.of(context).size.height*0.1 ,
                       child: Text(article.title.replaceAll("'", ""),
-                      style:const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(255, 255, 255, 1),fontSize: 17),
+                      style:const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(255, 255, 255, 1),fontSize: 18),
                       softWrap: true,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 4,))

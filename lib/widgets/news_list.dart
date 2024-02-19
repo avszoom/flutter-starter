@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:samachar/apis/NewsArticleApi.dart';
+import 'package:samachar/model/NewsArticleModel.dart';
 import 'package:samachar/utils/Util.dart';
 import 'package:samachar/widgets/news_article.dart';
 
@@ -18,7 +19,12 @@ class _NewsListState extends State<NewsList> {
   bool _isLoading = true;
 
   Future<void> _fetchDataAndPopulateList() async {
-    var articles = await NewsArticeApi().fetchNews();
+    List<NewsArticleModel> articles = [];
+    try{
+      articles = await NewsArticeApi().fetchNews();
+    } catch (e) {
+      print(e.toString());
+    }
     var filteredArticles = filterConsecutiveRepeatedArticles(articles);
     filteredArticles.shuffle(Random());
     var articleWidget = filteredArticles.map((article) => NewsArticle(article: article)).toList();
@@ -38,17 +44,19 @@ class _NewsListState extends State<NewsList> {
   Widget build(BuildContext context) {
     PageController controller = PageController(initialPage: 0);
     return _isLoading? const Scaffold(
-      body: Center(child: Stack(
-          alignment: Alignment.center,
+      body: Center(child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            CircularProgressIndicator(),
             Text(
               'Samachar.....', // Replace with your word
               style: TextStyle(
-                fontSize: 20,
-                color: Colors.black,
+                fontSize: 40,
+                color: Colors.blue,
+                fontFamily: 'Roboto'
               ),
             ),
+            CircularProgressIndicator(),
           ],
     ) )
     ):Scaffold(
