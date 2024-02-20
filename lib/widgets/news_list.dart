@@ -26,7 +26,7 @@ class _NewsListState extends State<NewsList> {
       print(e.toString());
     }
     var filteredArticles = filterConsecutiveRepeatedArticles(articles);
-    filteredArticles.shuffle(Random());
+    // filteredArticles.shuffle(Random());
     var articleWidget = filteredArticles.map((article) => NewsArticle(article: article)).toList();
     setState(() {
       _articleWidget = articleWidget;
