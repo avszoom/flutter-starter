@@ -15,7 +15,7 @@ class NewsArticleDesc extends StatelessWidget {
         style: const TextStyle(color: Color.fromRGBO(255, 255, 255, 1),fontSize: 15),
         softWrap: true,
         overflow: TextOverflow.ellipsis,
-        maxLines: 4,
+        maxLines: 5,
         )  ,
         )
     );

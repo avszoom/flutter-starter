@@ -26,10 +26,10 @@ class NewsArticle extends StatelessWidget {
                   child: 
                     SizedBox(
                       child: Text(article.title.replaceAll("'", ""),
-                      style:const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(255, 255, 255, 1),fontSize: 18),
+                      style:const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(255, 255, 255, 1),fontSize: 15),
                       softWrap: true,
                       overflow: TextOverflow.ellipsis,
-                      maxLines: 4,))
+                      maxLines: 3,))
                   ),
                   NewsArticleDesc(desc: article.shortDesc,height: MediaQuery.of(context).size.height*0.2,width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,),
                   NewsReadMore(newsUrl: article.articleUrl,title: article.title,),
