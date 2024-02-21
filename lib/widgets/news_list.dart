@@ -43,20 +43,13 @@ class _NewsListState extends State<NewsList> {
   @override
   Widget build(BuildContext context) {
     PageController controller = PageController(initialPage: 0);
-    return _isLoading? const Scaffold(
+    return _isLoading? Scaffold(
       body: Center(child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'Samachar.....', // Replace with your word
-              style: TextStyle(
-                fontSize: 40,
-                color: Colors.blue,
-                fontFamily: 'Roboto'
-              ),
-            ),
-            CircularProgressIndicator(),
+            Image.asset('assets/images/logo.png'),
+            const CircularProgressIndicator(),
           ],
     ) )
     ):Scaffold(
