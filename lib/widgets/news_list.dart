@@ -57,7 +57,7 @@ class _NewsListState extends State<NewsList> {
     ) )
     ):Scaffold(
       bottomNavigationBar: BottomAppBar(
-        color: const Color.fromRGBO(255, 255, 255, 1), // Match scaffold bg color
+        color: const Color.fromRGBO(0, 0, 0, 1), // Match scaffold bg color
         height: 60,
         child: Row(
             children: [
@@ -65,10 +65,19 @@ class _NewsListState extends State<NewsList> {
                 flex: 1,
                 child: GestureDetector(
                   onTap:() {
-
-                  },
-                  child: SizedBox(
-                      child: Image.asset('assets/images/minilogo.png',height:50,width:50),
+                    {
+                      controller.animateToPage(
+                        0, // The index of the page to animate to
+                        duration: const Duration(milliseconds: 500), // The duration of the animation
+                        curve: Curves.ease, // The curve of the animation
+                      );
+                  }},
+                  child: const SizedBox(
+                      child: Icon(
+                        Icons.home,
+                        color: Colors.blue, // Optionally, specify the icon's color
+                        size: 30, // Optionally, specify the icon's size
+                      ),
                     ),
                     ),
               ),
