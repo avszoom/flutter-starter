@@ -29,7 +29,7 @@ class NewsArticle extends StatelessWidget {
                       style:const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(255, 255, 255, 1),fontSize: 15),
                       softWrap: true,
                       overflow: TextOverflow.ellipsis,
-                      maxLines: 3,))
+                      maxLines: 2,))
                   ),
                   NewsArticleDesc(desc: article.shortDesc,height: MediaQuery.of(context).size.height*0.2,width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,),
                   NewsReadMore(newsUrl: article.articleUrl,title: article.title,),

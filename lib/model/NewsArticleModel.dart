@@ -15,9 +15,9 @@ class NewsArticleModel {
       source:json['source'], 
       author:json['author'] ?? "", 
       title:json['title'], 
-      shortDesc:json['short_desc'], 
+      shortDesc:json['short_desc'] ?? "", 
       articleUrl:json['article_url'], 
-      mediaUrl:json['media_url'], 
+      mediaUrl:json['media_url'] ?? "", 
       content:json['content'], 
       publishTime:json['publish_time']);
   }

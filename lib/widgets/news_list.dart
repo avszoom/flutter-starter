@@ -23,7 +23,7 @@ class _NewsListState extends State<NewsList> {
     try{
       articles = await NewsArticeApi().fetchNews();
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
     }
     var filteredArticles = filterConsecutiveRepeatedArticles(articles);
     // filteredArticles.shuffle(Random());
@@ -49,10 +49,32 @@ class _NewsListState extends State<NewsList> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset('assets/images/logo.png'),
-            const CircularProgressIndicator(),
+            Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: const CircularProgressIndicator(),
+            ),
           ],
     ) )
     ):Scaffold(
+      bottomNavigationBar: BottomAppBar(
+        color: const Color.fromRGBO(255, 255, 255, 1), // Match scaffold bg color
+        height: 60,
+        child: Row(
+            children: [
+              Expanded(
+                flex: 1,
+                child: GestureDetector(
+                  onTap:() {
+
+                  },
+                  child: SizedBox(
+                      child: Image.asset('assets/images/minilogo.png',height:50,width:50),
+                    ),
+                    ),
+              ),
+            ],
+          ),
+      ),
       body: Container(
         margin: const EdgeInsets.all(0),
         child: PageView(
