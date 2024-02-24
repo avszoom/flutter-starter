@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:samachar/model/NewsArticleProvider.dart';
 import 'package:samachar/utils/constants.dart';
+import 'package:samachar/views/main_feed.dart';
 import 'package:samachar/views/news_list.dart';
 
 class HomeView extends StatefulWidget {
@@ -20,23 +21,15 @@ class _MyWidgetState extends State<HomeView> {
     });
   }
 
-  Future<void> _fetchDataAndPopulateList() async {
-    Future.delayed(Duration.zero, () async {
-      var articles = Provider.of<NewsArticleProvider>(context, listen: false);
-      await articles.fetchArticles();
-    });
-  }
-
   @override 
   void initState(){
     super.initState(); // Always call super.initState() first
-    _fetchDataAndPopulateList(); //intelligent 
   }
 
   Widget getPage(int index) {
     switch(index) {
       case 0:
-        return Container();
+        return const MainFeed();
       case 1:
         return Container();
       case 2:
