@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:samachar/model/NewsArticleProvider.dart';
 import 'package:samachar/utils/constants.dart';
+import 'package:samachar/views/explore_feed.dart';
 import 'package:samachar/views/main_feed.dart';
 import 'package:samachar/views/news_list.dart';
 
@@ -31,7 +30,7 @@ class _MyWidgetState extends State<HomeView> {
       case 0:
         return const MainFeed();
       case 1:
-        return Container();
+        return const ExploreFeed();
       case 2:
         return const NewsList();
       default:

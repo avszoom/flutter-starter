@@ -19,7 +19,6 @@ class _MyWidgetState extends State<MainFeed> {
       var articles = Provider.of<NewsArticleProvider>(context, listen: false);
       await articles.fetchArticles();
       var articleWidget = articles.articles.map((article) => MainFeedNewsArticle(article: article)).toList();
-      print(articleWidget.length);
       setState(() {
         _isLoading= false;
         _articleWidget = articleWidget;
