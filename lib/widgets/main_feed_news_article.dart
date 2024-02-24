@@ -23,7 +23,7 @@ class MainFeedNewsArticle extends StatelessWidget {
                   child: 
                     SizedBox(
                       child: Text(article.title.replaceAll("'", ""),
-                      style:const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(255, 255, 255, 1),fontSize: 15),
+                      style:const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(255, 255, 255, 1),fontSize: 12),
                       softWrap: true,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,))

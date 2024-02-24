@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class NewsReadMore extends StatelessWidget {
@@ -13,12 +14,15 @@ class NewsReadMore extends StatelessWidget {
         margin: const EdgeInsets.only(top:5,left:0),
         child: SizedBox(
           child: TextButton(
-          onPressed: () {
+          onPressed: () async {
+            if (await canLaunchUrl(Uri.parse(newsUrl))) {
+              await launchUrl(Uri.parse(newsUrl));
+            } else {
             Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => WebViewPage(url: newsUrl,title: title,)),
                   );
-          },
+          }},
           child: const Text('More',style: TextStyle(fontSize: 12,color: Color.fromRGBO(255, 0, 0, 1)),),
         )
       ));
