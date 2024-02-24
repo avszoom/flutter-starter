@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:samachar/model/NewsArticleProvider.dart';
 import 'package:samachar/widgets/main_feed_news_article.dart';
-import 'package:samachar/widgets/news_article.dart';
-import 'package:samachar/widgets/news_article_desc.dart';
 
 class MainFeed extends StatefulWidget {
   const MainFeed({super.key});
