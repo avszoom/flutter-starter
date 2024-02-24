@@ -10,7 +10,7 @@ class MainFeedNewsArticle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-            height: MediaQuery.of(context).size.height*0.35,
+            height: MediaQuery.of(context).size.height*0.3,
             width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,
             color: const Color.fromRGBO(0, 0, 0, 0.8),
             margin: const EdgeInsets.all(3),
@@ -29,7 +29,7 @@ class MainFeedNewsArticle extends StatelessWidget {
                       maxLines: 2,))
                   ),
                   Container(
-                    height: 30,
+                    height: 40,
                     child: NewsReadMore(newsUrl: article.articleUrl,title: article.title,),
                   )
                 ],

@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class NewsReadMore extends StatelessWidget {
@@ -14,18 +16,19 @@ class NewsReadMore extends StatelessWidget {
         child: SizedBox(
           child: TextButton(
           onPressed: () async {
-            // if (kIsWeb) {
-            //   await launchUrl(Uri.parse(newsUrl));
-            // } else {
+            if (kIsWeb) {
+              print("inside");
+              await FlutterWebBrowser.openWebPage(
+                url: newsUrl);
+            } else {
             Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => WebViewPage(url: newsUrl,title: title,)),
                   );
-          // }
+          }
           },
           child: const Text('More',style: TextStyle(fontSize: 12,color: Color.fromRGBO(255, 0, 0, 1)),),
-        )
-      ));
+      )));
   }
 }
 
