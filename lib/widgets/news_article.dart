@@ -20,7 +20,7 @@ class NewsArticle extends StatelessWidget {
             child:
             Column(
               children: [
-                NewsArticleImage(imageUrl: article.mediaUrl,height: MediaQuery.of(context).size.height*0.60 ,width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,), 
+                NewsArticleImage(imageUrl: article.mediaUrl,height: MediaQuery.of(context).size.height*0.50 ,width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,), 
                 Container(
                   margin: const EdgeInsets.only(left: 10,top:10),
                   child: 
