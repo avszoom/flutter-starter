@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'dart:html' as html;
 
 class NewsReadMore extends StatelessWidget {
   final String newsUrl;
@@ -12,14 +12,13 @@ class NewsReadMore extends StatelessWidget {
   Widget build(BuildContext context){
     return 
       Container(
-        margin: const EdgeInsets.only(top:5,left:0),
+        margin: const EdgeInsets.only(left:0),
         child: SizedBox(
           child: TextButton(
           onPressed: () async {
             if (kIsWeb) {
-              print("inside");
-              await FlutterWebBrowser.openWebPage(
-                url: newsUrl);
+              html.window.open(
+                newsUrl,'new_tab');
             } else {
             Navigator.push(
                     context,
@@ -27,7 +26,7 @@ class NewsReadMore extends StatelessWidget {
                   );
           }
           },
-          child: const Text('More',style: TextStyle(fontSize: 12,color: Color.fromRGBO(255, 0, 0, 1)),),
+          child: const Text('More',style: TextStyle(fontSize: 10,color: Color.fromRGBO(255, 0, 0, 1)),),
       )));
   }
 }

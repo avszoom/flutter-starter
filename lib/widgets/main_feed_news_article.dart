@@ -10,14 +10,14 @@ class MainFeedNewsArticle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-            height: MediaQuery.of(context).size.height*0.3,
+            height: MediaQuery.of(context).size.height*0.4,
             width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,
             color: const Color.fromRGBO(0, 0, 0, 0.8),
             margin: const EdgeInsets.all(3),
             child:
             Column(
               children: [
-                NewsArticleImage(imageUrl: article.mediaUrl, height: MediaQuery.of(context).size.height*0.18, width: MediaQuery.of(context).size.width,), 
+                NewsArticleImage(imageUrl: article.mediaUrl, height: MediaQuery.of(context).size.height*0.28, width: MediaQuery.of(context).size.width,), 
                 Container(
                   margin: const EdgeInsets.only(left: 10,top:10),
                   child: 
@@ -29,7 +29,7 @@ class MainFeedNewsArticle extends StatelessWidget {
                       maxLines: 2,))
                   ),
                   Container(
-                    height: 40,
+                    height: 30,
                     child: NewsReadMore(newsUrl: article.articleUrl,title: article.title,),
                   )
                 ],
