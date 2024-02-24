@@ -17,13 +17,13 @@ class MainFeedNewsArticle extends StatelessWidget {
             child:
             Column(
               children: [
-                NewsArticleImage(imageUrl: article.mediaUrl, height: MediaQuery.of(context).size.height*0.2, width: MediaQuery.of(context).size.width,), 
+                NewsArticleImage(imageUrl: article.mediaUrl, height: MediaQuery.of(context).size.height*0.18, width: MediaQuery.of(context).size.width,), 
                 Container(
                   margin: const EdgeInsets.only(left: 10,top:10),
                   child: 
                     SizedBox(
                       child: Text(article.title.replaceAll("'", ""),
-                      style:const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(255, 255, 255, 1),fontSize: 12),
+                      style:const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(255, 255, 255, 1),fontSize: 13),
                       softWrap: true,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,))
