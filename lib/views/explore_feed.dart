@@ -6,7 +6,6 @@ import 'package:samachar/model/NewsArticleModel.dart';
 import 'package:samachar/model/NewsArticleProvider.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:samachar/widgets/explore_overlay_widget.dart';
-import 'package:samachar/widgets/news_article.dart';
 import 'package:samachar/widgets/news_article_image.dart';
 
 class ExploreFeed extends StatefulWidget {
@@ -67,8 +66,7 @@ class _MyWidgetState extends State<ExploreFeed> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
+    return 
         SingleChildScrollView(
           physics: const ScrollPhysics(),
           child: StaggeredGrid.count(
@@ -87,18 +85,6 @@ class _MyWidgetState extends State<ExploreFeed> {
                     height: MediaQuery.of(context).size.height*0.28, 
                     width: MediaQuery.of(context).size.width,),
                   ))).toList(),
-          )),
-        if (showOverlayWidget)
-          Positioned.fill(
-            child: Center(
-              child: Container(
-                width: 200,
-                height: 200,
-                color: Colors.black.withOpacity(0.8),
-                child: Text("currentArticle.shortDesc",style:const TextStyle(color: Color.fromRGBO(255, 255, 255, 1)),),
-              ),
-            ),
-          ),
-      ]);
+          ));
   }
 }

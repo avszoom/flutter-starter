@@ -35,10 +35,6 @@ class WebViewPage extends StatelessWidget {
   final String url;
   final String title;
   WebViewPage({required this.url, required this.title});
-  // late final _controller =  WebViewController()
-  //     ..loadRequest(
-  //       Uri.parse(url),
-  //     );
 
   @override
   Widget build(BuildContext context) {
