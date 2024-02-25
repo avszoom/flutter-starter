@@ -26,7 +26,7 @@ class MainFeedNewsArticle extends StatelessWidget {
                       style:const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(255, 255, 255, 1),fontSize: 13,),
                       softWrap: true,
                       overflow: TextOverflow.ellipsis,
-                      maxLines: 3,))
+                      maxLines: 2,))
                   ),
                   Container(
                     height: 30,

@@ -6,7 +6,11 @@ import 'package:samachar/widgets/news_read_more.dart';
 
 class NewsArticle extends StatelessWidget {
   final NewsArticleModel article;
-  const NewsArticle({super.key, required this.article});
+  double imageHeight;
+  double fontsize;
+  int titleLines;
+  double articleHeight;
+  NewsArticle({super.key, required this.article,this.imageHeight=0.5,this.fontsize=15,this.titleLines=2,this.articleHeight=0.2});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,7 @@ class NewsArticle extends StatelessWidget {
             child:
             Column(
               children: [
-                NewsArticleImage(imageUrl: article.mediaUrl,height: MediaQuery.of(context).size.height*0.50 ,width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,), 
+                NewsArticleImage(imageUrl: article.mediaUrl,height: MediaQuery.of(context).size.height*imageHeight ,width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,), 
                 Container(
                   margin: const EdgeInsets.only(left: 10,top:10),
                   child: 
@@ -31,7 +35,7 @@ class NewsArticle extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,))
                   ),
-                  NewsArticleDesc(desc: article.shortDesc,height: MediaQuery.of(context).size.height*0.2,width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,),
+                  NewsArticleDesc(desc: article.shortDesc,height: MediaQuery.of(context).size.height*articleHeight,width: MediaQuery.of(context).size.width > 600 ? 600 : MediaQuery.of(context).size.width,),
                   NewsReadMore(newsUrl: article.articleUrl,title: article.title,),
                 ],) 
           ),
